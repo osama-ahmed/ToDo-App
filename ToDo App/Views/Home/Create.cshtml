@@ -1,0 +1,34 @@
+﻿@model ToDo_App.Models.Note
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add a Note</h2>
+
+@using (Html.BeginForm())
+{
+    //to prevent cross-site request forgery (CSRF)
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(m => m.Id)
+
+    <div class="form-group">
+        @Html.Label("Title", new { @class="form-control"})
+        <br />
+        @Html.TextBoxFor(m => m.title, new { @class = "form-control", autofocus = "autofocus" })
+    </div>
+    
+    <div class="form-group">
+        @Html.Label("Note", new { @class = "form-control" })
+        @Html.TextAreaFor(m => m.content, 7, 50, new { @class = "form-control", autofocus = "autofocus" })
+        @Html.ValidationMessageFor(m => m.content)
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg">Save</button>
+}
+
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

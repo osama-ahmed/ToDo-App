@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Sticky Notes</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <!--<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />-->
+</head>
+<body>
+    <div id="header">
+        <h1>@Html.ActionLink("ToDo","Index","Home")</h1>
+        <h3>manage your ideas</h3>
+    </div>
+    <div id="pages">
+        <ul>
+            <li class="active">@Html.ActionLink("Add a Note","Create","Home")</li>
+        </ul>
+    </div>
+
+    <div id="content">
+        @RenderBody()
+    </div>
+
+    <div id="footer">
+        <p>Copyright &copy; 2006 Sticky Notes. Designed by <a href="http://www.freecsstemplates.org/"><strong>Free CSS Templates</strong></a></p>
+    </div>
+    <div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

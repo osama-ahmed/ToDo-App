@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ToDo_App.Models.Note>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div id="posts">
+    @foreach (var note in Model)
+    {
+        <div class="post">
+            <h2 class="title">@note.title</h2>
+            <h3 class="posted">@note.date</h3>
+            <div class="story">
+                @note.content
+            </div>
+            <div class="meta">
+
+            </div>
+        </div>
+    }
+</div>     
+
+<div id="search" class="yellownotes">
+    <h2 class="heading">Search</h2>
+    <div class="content">
+        <form method="get" action="#">
+            <div>
+                <input type="text" id="textfield1" name="textfield1" value="" size="18" />
+                <input type="submit" id="submit1" name="submit1" value="Go" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="archives" class="greennotes">
+    <h2 class="heading">Archives</h2>
+    <div class="content">
+        <ul>
+            <li class="first"><a href="#">2018</a> (7) </li>
+            <li><a href="#">2017</a> (31)</li>
+            <li><a href="#">2016</a> (31)</li>
+            <li><a href="#">2015</a> (30)</li>
+        </ul>
+    </div>
+</div>
+
+<div id="categories" class="orangenotes">
+    <h2 class="heading">Categories</h2>
+    <div class="content">
+        <ul>
+            <li class="first"><a href="#">Notes</a></li>
+            <li><a href="#">Lists</a></li>
+        </ul>
+    </div>
+</div>   
